@@ -1,4 +1,7 @@
 language: c
+arch:
+  - amd64
+  - ppc64le
 compiler:
   - gcc
   - clang
@@ -10,6 +13,10 @@ matrix:
   exclude:
     - compiler: clang
       env: GCOV_OPT="--enable-gcov" 
+      #Added power support ppc64le
+    - compiler: clang
+      env: GCOV_OPT="--enable-gcov"
+      arch: ppc64le
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq libpcap0.8-dev
