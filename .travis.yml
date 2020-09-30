@@ -3,12 +3,17 @@ matrix:
   include:
     - compiler: gcc
       env: GCOV_OPT="--enable-gcov"
+    - compiler: gcc
+      env: GCOV_OPT="--disable-gcov"
     - compiler: clang
       env: GCOV_OPT="--disable-gcov" # gcov code coverage only works with gcc, so don't run it with clang.
 #Adding Power_jobs
     - compiler: gcc
       env: GCOV_OPT="--enable-gcov"
       arch: ppc64le
+    - compiler: gcc
+      env: GCOV_OPT="--disable-gcov"
+      arch: ppc64le  
     - compiler: clang
       env: GCOV_OPT="--disable-gcov"
       arch: ppc64le
