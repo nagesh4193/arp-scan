@@ -2,16 +2,16 @@ language: c
 matrix:
   include:
     - compiler: gcc
-	  env: GCOV_OPT="--enable-gcov"
-	- compiler: clang
-	  env: GCOV_OPT="--disable-gcov" # gcov code coverage only works with gcc, so don't run it with clang.
+      env: GCOV_OPT="--enable-gcov"
+    - compiler: clang
+      env: GCOV_OPT="--disable-gcov" # gcov code coverage only works with gcc, so don't run it with clang.
 #Adding Power_jobs
     - compiler: gcc
-	  env: GCOV_OPT="--enable-gcov"
-	  arch: ppc64le
-	- compiler: clang
-	  env: GCOV_OPT="--disable-gcov"
-	  arch: ppc64le
+      env: GCOV_OPT="--enable-gcov"
+      arch: ppc64le
+    - compiler: clang
+      env: GCOV_OPT="--disable-gcov"
+      arch: ppc64le
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq libpcap0.8-dev
